@@ -63,7 +63,7 @@ Antes de iniciar, asegúrate de tener instalado:
 
 ## 🗄️ Script de Usuarios
 
-- Para  crear los usuarios es necesario corre los scripts que se se encuentran en el archivo **script_users.sql**
+- Para acceder a la aplicación es necesario ejecutar el archivo **script_users.sql** en la base de datos, el cual se encarga de crear los usuarios iniciales.
 
 ## 🔑 Funcionalidades
 
@@ -78,7 +78,7 @@ Antes de iniciar, asegúrate de tener instalado:
 ## 🚹 Roles del sistema
 
 - **Administrador:** Tiene acceso a todo el sistema.
-- **Cajero:** Tiene acceso a la venta de productos y la información de las ventas realizadas, negandole el acceso a la adición, edición y eliminacion de productos y a todo lo referente a usuarios del sistema.
+- **Cajero:** Tiene acceso a la venta de productos y la información de las ventas realizadas, negándole el acceso a la adición, edición y eliminación de productos y a todo lo referente a usuarios del sistema.
 
 ---
 
