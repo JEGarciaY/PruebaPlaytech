@@ -31,8 +31,8 @@ Antes de iniciar, asegúrate de tener instalado:
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/ALGarciaY/PruebaPlay.git
-   cd PruebaPlay
+   git clone https://github.com/JEGarciaY/PruebaPlaytech.git
+   cd PruebaPlaytech
    ```
 
 2. **Crear instancia de postgres en docker**
@@ -96,4 +96,3 @@ flowchart LR
 
 ## 📌 Conclusión
 Este sistema implementa un flujo completo de gestión de productos con **Angular 17** en el frontend, **Spring Boot** en el backend, base de datos en **PostgreSQL 15**, y orquestación con **Docker Compose**.  
-Para más detalles técnicos, revisa el código fuente en este repositorio.
