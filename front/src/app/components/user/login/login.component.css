@@ -1,14 +1,11 @@
-/* Fondo sutil */
 body {
   background: linear-gradient(to right, #74ebd5, #9face6);
 }
 
-/* Tarjeta del login */
 .card {
   border: none;
 }
 
-/* Botón con efecto */
 .btn-primary {
   background: #4a90e2;
   border: none;
@@ -20,7 +17,6 @@ body {
   transform: scale(1.02);
 }
 
-/* Inputs con borde elegante */
 .form-control {
   border-radius: 10px;
   padding: 10px;

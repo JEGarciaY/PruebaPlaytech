@@ -41,7 +41,7 @@ export class ModalSalesComponent {
   ) {}
 
   cancelar() {
-    this.dialogRef.close(); // undefined => cancelado
+    this.dialogRef.close();
   }
 
   vender() {

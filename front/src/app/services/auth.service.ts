@@ -34,13 +34,13 @@ export class AuthService {
 
   logout() {
     if (this.isBrowser) {
-      localStorage.removeItem('user'); //elimina sesión
+      localStorage.removeItem('user');
     }
   }
 
   isLoggedIn(): boolean {
     if (this.isBrowser) {
-      return !!localStorage.getItem('user'); //no hay sesion iniciada
+      return !!localStorage.getItem('user');
     }
     return false;
   }
@@ -48,7 +48,7 @@ export class AuthService {
   getUserRole(): string | null {
     if (this.isBrowser) {
       const user = this.getUser();
-      return user?.role || null; // lee el rol del usuario guardado
+      return user?.role || null;
     }
     return null;
   }

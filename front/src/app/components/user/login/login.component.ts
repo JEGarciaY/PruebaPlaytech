@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,11 @@ export class LoginComponent {
 
   onLogin() {
     if (!this.userName || !this.password) {
-    alert('Por favor ingresa usuario y contraseña.');
-    return;
+      Swal.fire({
+          text: 'Por favor ingresa usuario y contraseña.',
+          icon: 'warning',
+        });
+      return;
     }
     this.authService.login(this.userName, this.password).subscribe({
       next: (response) => {
@@ -25,9 +29,17 @@ export class LoginComponent {
       },
       error: (err) => {
       if (err.status === 401) {
-        alert('Credenciales incorrectas, intenta de nuevo.');
+        Swal.fire({
+          title: 'Error',
+          text: 'Credenciales incorrectas, intenta de nuevo.',
+          icon: 'error',
+        });
       } else {
-        alert('Error al conectar con el servidor');
+        Swal.fire({
+          title: 'Error',
+          text: 'Error al conectar con el servidor.',
+          icon: 'error',
+        });
       }
     }
     });

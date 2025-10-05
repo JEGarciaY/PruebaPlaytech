@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.isLoginPage = this.router.url === '/';
-        this.loadUser(); // cada vez que navega actualizamos usuario
+        this.loadUser();
       }
     });
   }
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();  // borra localStorage
+    this.authService.logout();
     this.user = null;
     this.router.navigate(['/']);
   }

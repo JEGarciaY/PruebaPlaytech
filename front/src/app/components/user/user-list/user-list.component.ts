@@ -62,34 +62,4 @@ export class UserListComponent {
         }
       });
     }
-  
-    // buyProduct(productId: number) {
-    //   const prod = this.products.find((p) => p.id === productId);
-    //   if (!prod) return;
-  
-    //   if (this.dialog.openDialogs.length > 0) return;
-  
-    //   this.dialog
-    //     .open(ModalSalesComponent, {
-    //       panelClass: 'custom-dialog-container',
-    //       disableClose: true,
-    //       data: { variable: prod.name, min: 1, max: prod.stock, idProduct: prod.id, name: prod.name },
-    //     })
-    //     .afterClosed()
-    //     .subscribe((cantidad) => {
-         
-    //       if (typeof cantidad !== 'number') return;
-  
-    //       //  Actualiza UI localmente
-    //       if (cantidad > prod.stock) {
-    //         alert(
-    //           `No puedes vender ${cantidad}; solo hay ${prod.stock} en stock`
-    //         );
-    //         return;
-    //       }
-          
-    //       this.getProducts();
-          
-    //     });
-    // }
 }

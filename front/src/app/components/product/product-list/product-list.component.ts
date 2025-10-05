@@ -121,11 +121,12 @@ export class ProductListComponent {
        
         if (typeof cantidad !== 'number') return;
 
-        //  Actualiza UI localmente
         if (cantidad > prod.stock) {
-          alert(
-            `No puedes vender ${cantidad}; solo hay ${prod.stock} en stock`
-          );
+          Swal.fire({
+            title: 'Error',
+            text: `No puedes vender ${cantidad}; solo hay ${prod.stock} en stock`,
+            icon: 'error',
+          });
           return;
         }
         
