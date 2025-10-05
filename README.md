@@ -62,9 +62,11 @@ Antes de iniciar, asegúrate de tener instalado:
 - Backend disponible en: **http://localhost:8080**
 
 ## 🗄️ Script de Usuarios
+
 - Para  crear los usuarios es necesario corre los scripts que se se encuentran en el archivo **script_users.sql**
 
-### 🔑 Funcionalidades
+## 🔑 Funcionalidades
+
 - **Crear producto:** Agregar nombre, stock, precio y descripción.  
 - **Actualizar producto:** Editar información existente.  
 - **Eliminar producto:** Quitar un producto del inventario (con confirmación).  
@@ -73,7 +75,8 @@ Antes de iniciar, asegúrate de tener instalado:
 - **Actualizar usuario:** Editar información existente.  
 - **Eliminar usuario:** Quitar un usuario del sistema (con confirmación).
 
-### 🚹 Roles del sistema
+## 🚹 Roles del sistema
+
 - **Administrador:** Tiene acceso a todo el sistema.
 - **Cajero:** Tiene acceso a la venta de productos y la información de las ventas realizadas, negandole el acceso a la adición, edición y eliminacion de productos y a todo lo referente a usuarios del sistema.
 
