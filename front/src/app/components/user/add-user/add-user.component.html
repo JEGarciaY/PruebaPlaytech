@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="container text-center" style="margin: 30px;">
+        <h1>Agregar Usuario</h1>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="userName" class="form-label">Nombre del Usuario</label>
+            <input type="text" step="any" class="form-control" id="userName" name="userName" [(ngModel)]="user.userName" required>
+        </div>
+        <div class="mb-3">
+            <label for="contraseña" class="form-label">Contraseña</label>
+            <input type="text" step="any" class="form-control" id="contraseña" name="contraseña" [(ngModel)]="user.password" required>
+        </div>
+        <div class="mb-3 d-flex flex-column">
+            <label for="rol" class="form-label mb-1">Rol</label>
+            <select class="form-select" id="rol" name="rol" [(ngModel)]="user.role" required>
+                <option value="">Seleccione un rol</option>
+                <option value="ADMIN">Administrador</option>
+                <option value="USER">Usuario</option>
+            </select>
+        </div>
+        <div class="container text-center">
+            <button type="submit" class="btn btn-success">Agregar</button>
+            <button type="button" style="margin-inline: 30px;" class="btn btn-info" (click)="clearForm()">Limpiar</button>
+            <a href="/users" class="btn btn-warning">Regresar</a>
+        </div>
+    </form>
+</div>

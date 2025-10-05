@@ -1,0 +1,14 @@
+h2 {
+  color: #2a5f23;
+  font-weight: bold;
+}
+
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-success {
+  background-color: #2a5f23 !important;
+  color: white;
+}

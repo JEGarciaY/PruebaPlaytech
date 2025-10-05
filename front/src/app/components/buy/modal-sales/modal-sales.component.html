@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <h5 class="modal-title w-100 text-center m-0">Confirmar venta</h5>
+</div>
+
+<div class="modal-body text-center">
+  <p class="fs-5 mb-3">¿Cuántos {{ data.variable }} quieres vender?</p>
+
+  <form [formGroup]="form" (ngSubmit)="vender()" class="text-start">
+    <div class="mb-3">
+      <label for="cantidad" class="form-label">Cantidad</label>
+      <input
+        id="cantidad"
+        type="number"
+        class="form-control"
+        formControlName="cantidad"
+        [min]="data.min ?? 1"
+        [max]="data.max ?? null"
+        placeholder="1"
+      />
+      <div class="text-danger small mt-1" *ngIf="form.controls.cantidad.hasError('required')">
+        La cantidad es obligatoria.
+      </div>
+      <div class="text-danger small" *ngIf="form.controls.cantidad.hasError('min')">
+        Debe ser al menos {{ data.min ?? 1 }}.
+      </div>
+      <div class="text-danger small" *ngIf="form.controls.cantidad.hasError('max')">
+        No puede superar {{ data.max }}.
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer d-flex justify-content-center gap-2">
+  <button type="button" class="btn btn-danger" (click)="cancelar()">Cancelar</button>
+  <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="vender()">Vender</button>
+</div>

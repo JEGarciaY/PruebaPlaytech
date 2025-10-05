@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="container text-center" style="margin: 30px;">
+        <h1>Agregar usuario</h1>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="userName" class="form-label">Nombre del Usaurio</label>
+            <input type="text" class="form-control" id="userName" name="userName" required="true" [(ngModel)]="user.userName">
+        </div>
+        <div class="mb-3">
+            <label for="rol" class="form-label">Rol del Usuario</label>
+            <input type="text" step="any" class="form-control" id="rol" name="rol" [(ngModel)]="user.role">
+        </div>
+        <div class="mb-3">
+            <label for="contraseña" class="form-label">Contraseña</label>
+            <input type="text" step="any" class="form-control" id="contraseña" name="contraseña" [(ngModel)]="user.password">
+        </div>
+        <div class="container text-center">
+            <button type="submit" class="btn btn-success mr-5">Guardar</button>
+            <a href="/users" class="btn btn-warning">Regresar</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+.navbar .btn-login {
+  background-color: #ff6600; /* naranja */
+  color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: 0.3s;
+}
+
+.navbar .btn-login:hover {
+  background-color: #cc5200; /* tono más oscuro al pasar el mouse */
+}
+
+.user-info {
+  margin-right: 20px;
+}

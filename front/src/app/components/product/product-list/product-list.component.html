@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="product-list.component.css">
+<div class="container">
+    <div class="container text-center" style="margin: 40px">
+        <h1>Inventario</h1>
+        
+    </div>
+    <div *ngIf="!hasProducts"  class="alert alert-warning text-center" role="alert">
+        No hay productos cargados, <a href="/addProduct" class="alert-link">agrega productos</a>.
+    </div>
+
+    <table *ngIf="hasProducts" class="table table-striped aling-middle">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center" scope="col">id</th>
+                <th class="text-center" scope="col">Nombre</th>
+                <th class="text-center" scope="col">Descripcion</th>
+                <th class="text-center" scope="col">Precio</th>
+                <th class="text-center" scope="col">Existencia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <th class="text-center" scope="row">{{product.id}}</th>
+                <td class="text-center">{{product.name}}</td>
+                <td class="text-center">{{product.description}}</td>
+                <td class="text-center">{{product.price}}</td>
+                <td class="text-center">{{product.stock}}</td>
+                <td class="text-center">
+                    <div>
+                        <button class="btn btn-primary" (click)="editProduct(product.id)">Editar</button>
+                        <button class="btn btn-danger ml-4" (click)="deleteProduct(product.id)">Eliminar</button>
+                        <button class="btn btn-success ml-4" (click)="buyProduct(product.id)">Vender</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  <button
+  type="button"
+  *ngIf="hasProducts"
+  class="btn btn-success btn-circle ml-auto mr-3"
+  (click)="addProduct()"> + </button>
+</div>

@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="user-list.component.css">
+<div class="container">
+    <div class="container text-center" style="margin: 40px">
+        <h1>Usuarios</h1>
+        
+    </div>
+    <div *ngIf="!hasUsers"  class="alert alert-warning text-center" role="alert">
+        No hay usurios cargados, <a href="/addUser" class="alert-link">agrega usuarios</a>.
+    </div>
+
+    <table *ngIf="hasUsers" class="table table-striped aling-middle">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center" scope="col">id</th>
+                <th class="text-center" scope="col">Usuario</th>
+                <th class="text-center" scope="col">Rol</th>
+                <th class="text-center" scope="col">Contraseña</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th class="text-center" scope="row">{{user.id}}</th>
+                <td class="text-center">{{user.userName}}</td>
+                <td class="text-center">{{user.role}}</td>
+                <td class="text-center">{{user.password}}</td>
+                <td class="text-center">
+                    <div>
+                        <button class="btn btn-primary" (click)="editUser(user.id)">Editar</button>
+                        <button class="btn btn-danger ml-4" (click)="deleteUser(user.id)">Eliminar</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a type="button" *ngIf="hasUsers" class="btn btn-success btn-circle ml-auto mr-3" href="/addUser">+</a>
+</div>
