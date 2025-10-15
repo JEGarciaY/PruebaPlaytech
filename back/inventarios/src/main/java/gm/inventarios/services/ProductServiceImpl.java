@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product selectOneById(Integer idProduct) {
+    public Product selectProductById(Integer idProduct) {
         Product product = productRepository.findProductById(idProduct);
         if (product == null) {
             throw new NotFoundRecurse("No existe el producto con id: " + idProduct);

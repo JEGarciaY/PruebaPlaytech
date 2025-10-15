@@ -24,7 +24,7 @@ export class EditUserComponent {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Ha ocurrido un error al cargar el producto'
+          text: 'Ha ocurrido un error al cargar el usuario'
         })
       );
     }

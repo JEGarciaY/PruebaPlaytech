@@ -19,7 +19,7 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody User loginRequest) {
         try {
             User user = authService.login(loginRequest.getUserName(), loginRequest.getPassword());
-            return ResponseEntity.ok(user); // 🔥 devolvemos el usuario con su rol
+            return ResponseEntity.ok(user);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }

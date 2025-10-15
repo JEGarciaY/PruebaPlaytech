@@ -27,8 +27,8 @@ public class ProductController {
     }
 
     @GetMapping("/selectProductById/{idProduct}")
-    public ResponseEntity<Product> selectOneById(@PathVariable Integer idProduct) {
-        Product product = productService.selectOneById(idProduct);
+    public ResponseEntity<Product> selectProductById(@PathVariable Integer idProduct) {
+        Product product = productService.selectProductById(idProduct);
         return ResponseEntity.ok().body(product);
     }
 

@@ -1,12 +1,23 @@
 <div class="container mt-4">
   <h2 class="text-center text-success mb-4">Historial de Compras</h2>
 
-  <div *ngIf="errorMessage" class="alert alert-danger">
+  <div *ngIf="errorMessage" class="alert alert-danger text-center">
     {{ errorMessage }}
   </div>
 
-  <div *ngIf="!errorMessage && buys.length === 0" class="alert alert-warning">
-    No existen compras registradas.
+  <div *ngIf="buys.length > 0 && !errorMessage" class="d-flex align-items-center mb-3">
+    <label for="fecha" class="me-2 fw-bold">Seleccione una fecha:</label>
+    <input
+      type="date"
+      id="fecha"
+      class="form-control"
+      style="width: 200px;"
+      [(ngModel)]="selectedDate"
+    />
+
+    <button
+      class="btn btn-success ms-3" (click)="generatePDF()" [disabled]="!selectedDate">Generar PDF
+    </button>
   </div>
 
   <table
@@ -15,27 +26,23 @@
   >
     <thead class="table-success">
       <tr>
-        <th class="text-center" scope="col">ID</th>
-        <th class="text-center" scope="col">Fecha</th>
-        <th class="text-center" scope="col">Producto</th>
-        <th class="text-center" scope="col">Cantidad</th>
-        <th class="text-center" scope="col">Precio Unitario</th>
-        <th class="text-center" scope="col">Precio Total</th>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Precio Total</th> 
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let buy of buys"></tr>
       <tr *ngFor="let buy of buys">
-        <td class="text-center">{{ buy.id }}</td>
-        <td class="text-center">{{ buy.date | date : "dd/MM/yyyy" }}</td>
-        <td class="text-center">{{ buy.nameProduct}}</td>
-        <td class="text-center">{{ buy.quantity }}</td>
-        <td class="text-center">{{ buy.unitPrice | currency }}</td>
-        <td class="text-center">{{ buy.totalPrice | currency }}</td>
+        <td>{{ buy.id }}</td>
+        <td>{{ buy.date | date : "dd/MM/yyyy" }}</td>
+        <td>{{ buy.nameProduct }}</td>
+        <td>{{ buy.quantity }}</td>
+        <td>{{ buy.unitPrice | currency }}</td>
+        <td>{{ buy.totalPrice | currency }}</td>
       </tr>
     </tbody>
   </table>
-  <div>
-    <button class="btn btn-success ml-4" (click)="generatePDF()">Generar PDF</button>
-  </div>
 </div>

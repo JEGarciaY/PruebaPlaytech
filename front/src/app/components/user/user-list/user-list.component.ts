@@ -34,7 +34,7 @@ export class UserListComponent {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'No se pudieron cargar los productos',
+            text: 'No se pudieron cargar los usuarios',
           });
         }
       );
